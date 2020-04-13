@@ -4,10 +4,8 @@ import lombok.AllArgsConstructor
 import lombok.Getter
 import lombok.Setter
 import lombok.ToString
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.Table
+import java.util.*
+import javax.persistence.*
 
 @Setter
 @Getter
@@ -17,11 +15,12 @@ import javax.persistence.Table
 @AllArgsConstructor
 data class Users (
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "_idrref")
-    val _idrref: String? = null,
+    val _idrref: UUID? = null,
 
     @Column(name = "_id")
-    val _id: Int? = null,
+    val _id: Long? = null,
 
     @Column(name = "username")
     val username: String? = null,
@@ -31,9 +30,6 @@ data class Users (
 
     @Column(name = "email_work")
     val email_work: String? = null,
-
-    @Column(name = "date_last_enter")
-    val date_last_enter: String? = null,
 
     @Column(name = "is_admin")
     val is_admin: String? = null

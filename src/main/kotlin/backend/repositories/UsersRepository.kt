@@ -20,7 +20,7 @@ interface UsersRepository: JpaRepository<Users, Long> {
                 "\tusers.username as username,\n" +
                 "\tencode(users.password, 'escape') as password,\n" +
                 "\tusers.email_work as email_work,\n" +
-                "\tusers.date_last_enter as date_last_enter,\n" +
+                //"\tusers.date_last_enter as date_last_enter,\n" +
                 "\tusers.is_admin as is_admin\n" +
                 "from\n" +
                 "\tusers as users",
@@ -37,7 +37,7 @@ interface UsersRepository: JpaRepository<Users, Long> {
                 "\tusers.username as username,\n" +
                 "\tencode(users.password, 'escape') as password,\n" +
                 "\tusers.email_work as email_work,\n" +
-                "\tusers.date_last_enter as date_last_enter,\n" +
+                //"\tusers.date_last_enter as date_last_enter,\n" +
                 "\tusers.is_admin as is_admin\n" +
                 "from\n" +
                 "\tusers as users\n" +

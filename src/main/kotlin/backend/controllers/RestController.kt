@@ -58,9 +58,13 @@ class RestController {
     fun getRemoteDesktopProtocolsList(@RequestHeader headers: Map<String?, String?>): HashMap<String,List<RemoteDesktopProtocols>>{
         var remoteDesktopProtocols: HashMap<String, List<RemoteDesktopProtocols>> = hashMapOf()
 
-        when (usersRights.getAccessToDataByHeader(headers)){
+        var answerAccess = usersRights.getAccessToDataByHeader(headers)
+
+        when (answerAccess){
             "" -> remoteDesktopProtocols["RemoteDesktopProtocolsData"] = remoteDesktopProtocolsRepository.getRemoteDesktopProtocolsList()
-            "errorDateLastEnter" -> remoteDesktopProtocols["errorDateLastEnter"] = mutableListOf()
+            else -> {
+                remoteDesktopProtocols[answerAccess] = mutableListOf()
+            }
         }
 
         return remoteDesktopProtocols
@@ -75,9 +79,13 @@ class RestController {
                                      @RequestHeader headers: Map<String?, String?>): HashMap<String,List<RemoteDesktopProtocols>>{
         var remoteDesktopProtocols: HashMap<String, List<RemoteDesktopProtocols>> = hashMapOf()
 
+        var answerAccess = usersRights.getAccessToDataByHeader(headers)
+
         when (usersRights.getAccessToDataByHeader(headers)){
             "" -> remoteDesktopProtocols["RemoteDesktopProtocolsData"] = remoteDesktopProtocolsRepository.getRemoteDesktopProtocolById(UUID.fromString(idrref))
-            "errorDateLastEnter" -> remoteDesktopProtocols["errorDateLastEnter"] = mutableListOf()
+            else -> {
+                remoteDesktopProtocols[answerAccess] = mutableListOf()
+            }
         }
 
         return remoteDesktopProtocols

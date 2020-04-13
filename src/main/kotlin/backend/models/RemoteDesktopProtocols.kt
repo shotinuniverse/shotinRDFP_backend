@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor
 import lombok.Getter
 import lombok.Setter
 import lombok.ToString
+import java.util.*
 import javax.persistence.*
 
 @Setter
@@ -15,11 +16,12 @@ import javax.persistence.*
 data class RemoteDesktopProtocols(
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "_idrref")
-    val _idrref: String? = null,
+    val _idrref: UUID? = null,
 
     @Column(name = "_id")
-    val _id: Int? = null,
+    val _id: Long? = null,
 
     @Column(name = "name")
     val name: String? = null,
