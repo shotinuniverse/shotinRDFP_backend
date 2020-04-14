@@ -26,5 +26,5 @@ data class AccessRequests (
     val email_work: String? = null,
 
     @Column(name = "accept")
-    val accept: Boolean? = null
+    var accept: Boolean? = null
 )
