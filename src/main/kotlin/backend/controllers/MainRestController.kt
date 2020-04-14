@@ -1,6 +1,7 @@
 package backend.controllers
 
-import backend.common.UsersRights
+import backend.AuthorizationAndUsersRights.Authorization
+import backend.AuthorizationAndUsersRights.UsersRights
 import backend.models.RemoteDesktopProtocols
 import backend.models.Users
 import backend.repositories.RemoteDesktopProtocolsRepository
@@ -15,7 +16,7 @@ import kotlin.collections.HashMap
 
 @RestController
 @RequestMapping("/api")
-class RestController {
+class MainRestController {
     //region declaration_repositories
     @Autowired
     lateinit var remoteDesktopProtocolsRepository: RemoteDesktopProtocolsRepository
@@ -32,6 +33,7 @@ class RestController {
         return "Test has been successfully!"
     }
     //endregion
+
     @GetMapping(
             path = ["/users-list"],
             produces = [MediaType.APPLICATION_JSON_VALUE]
@@ -92,6 +94,4 @@ class RestController {
     }
 
     //endregion
-
-
 }

@@ -1,11 +1,10 @@
-package backend.common
+package backend.AuthorizationAndUsersRights
 
+import backend.common.WorkingWithDate
 import backend.repositories.ConfigRepository
 import backend.repositories.UsersKeysRepository
-import backend.repositories.UsersRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
-import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
 import java.util.*
@@ -14,19 +13,9 @@ import java.util.*
 class UsersRights {
     @Autowired
     lateinit var usersKeysRepository: UsersKeysRepository
+
     @Autowired
     lateinit var configRepository: ConfigRepository
-
-    fun getRandomKey(): String{
-        val charPool : List<Char> = ('a'..'z') + ('A'..'Z') + ('0'..'9')
-
-        val randomString = (1..40)
-                .map { i -> kotlin.random.Random.nextInt(0, charPool.size) }
-                .map(charPool::get)
-                .joinToString("")
-
-        return randomString
-    }
 
     fun getAccessToDataByHeader(headers: Map<String?, String?>): String{
         //var apikey = getRandomKey()
@@ -63,6 +52,7 @@ class UsersRights {
 
         return answerAccess
     }
+
 
 
 }
