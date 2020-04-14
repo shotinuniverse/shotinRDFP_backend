@@ -1,4 +1,4 @@
-package backend.AuthorizationAndUsersRights
+package backend.authorizationandusersrights
 
 import backend.repositories.UsersRepository
 import org.springframework.beans.factory.annotation.Autowired

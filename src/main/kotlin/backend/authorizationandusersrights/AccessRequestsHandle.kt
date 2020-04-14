@@ -1,7 +1,5 @@
-package backend.AuthorizationAndUsersRights
+package backend.authorizationandusersrights
 
-import java.util.*
-import kotlin.collections.HashMap
 import backend.models.AccessRequests
 import backend.repositories.AccessRequestsRepository
 import org.springframework.beans.factory.annotation.Autowired

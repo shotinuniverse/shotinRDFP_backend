@@ -1,4 +1,4 @@
-package backend.AuthorizationAndUsersRights
+package backend.authorizationandusersrights
 
 import backend.common.WorkingWithDate
 import backend.repositories.ConfigRepository

@@ -1,8 +1,8 @@
 package backend.controllers
 
-import backend.AuthorizationAndUsersRights.AccessRequestsHandle
-import backend.AuthorizationAndUsersRights.Authorization
-import backend.AuthorizationAndUsersRights.UsersRights
+import backend.authorizationandusersrights.AccessRequestsHandle
+import backend.authorizationandusersrights.Authorization
+import backend.authorizationandusersrights.UsersRights
 import backend.models.AccessRequests
 import backend.repositories.UsersRepository
 import org.springframework.beans.factory.annotation.Autowired

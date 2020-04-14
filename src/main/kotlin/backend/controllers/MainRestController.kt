@@ -1,7 +1,6 @@
 package backend.controllers
 
-import backend.AuthorizationAndUsersRights.Authorization
-import backend.AuthorizationAndUsersRights.UsersRights
+import backend.authorizationandusersrights.UsersRights
 import backend.models.RemoteDesktopProtocols
 import backend.models.Users
 import backend.repositories.RemoteDesktopProtocolsRepository
